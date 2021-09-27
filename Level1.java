@@ -24,6 +24,7 @@ public class Level1 extends World
     
     public void act()
     {
+        spawn();
     }
     
     /**
@@ -60,4 +61,13 @@ public class Level1 extends World
         
         
     }
+    
+    private void spawn()
+    {
+        if(Math.random() < 0.0025)
+        {
+            addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1200), -30);
+        }
+    }
+    
 }
