@@ -37,7 +37,7 @@ public class Level1 extends World
             Door.class, HUD.class);
         Door door = new Door();
         addObject(door,1174,44);
-        Player player = new Player();
+        Player player = new Player(3, 5.6f, GRAVITY, 3, 3, Level2.class, Music);
         addObject(player,96,750);
         Gem gem = new Gem();
         addObject(gem, 890, 488);

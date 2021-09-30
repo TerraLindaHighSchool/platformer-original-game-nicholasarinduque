@@ -28,6 +28,13 @@ public class Player extends Actor
     public Player(int speed, float jumpForce, float gravity, int maxHealth,
                   int maxPowerUp, Class nextLevel, GreenfootSound music)
     {
+        this.speed = speed;
+        JUMP_FORCE = jumpForce;
+        GRAVITY = gravity;
+        NEXT_LEVEL = nextLevel;
+        MUSIC = music;
+        
+        STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[]
                          {
                             new GreenfootImage("walk0.png"),
@@ -47,12 +54,62 @@ public class Player extends Actor
      */
     public void act()
     {
+        walk();
+        jump();
+        fall();
+        onCollinsion();
+        gameOver();
     }
     
     public void addedToWorld(World world) {}
     
-    private void walk() {} 
-    private void jump() {}
+    private void walk() 
+    {
+        if(isWalking)
+        {
+            animator();
+        }
+        else
+        {
+            setImage(STANDING_IMAGE);
+            walkIndex = 0;
+        }
+        
+        if(Greenfoot.isKeyDown("right"))
+        {
+            if(isFacingLeft)
+            {
+                mirrorImages();
+            }
+            isWalking = true;
+            isFacingLeft = false;
+            move(speed);
+        }
+        
+        if(Greenfoot.isKeyDown("left"))
+        {
+            if(!isFacingLeft)
+            {
+                mirrorImages();
+            }
+            isWalking = true;
+            isFacingLeft = true;
+            move (-speed);
+        }
+        
+        if(!(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("left")))
+        {
+            isWalking = false;
+        }
+    } 
+    private void jump() 
+    {
+        if(Greenfoot.isKeyDown("space") && isOnGround())
+        {
+            yVelocity = JUMP_FORCE;
+            isJumping = true;
+        }
+    }
     private void fall() {}
     private void animator() 
     {
@@ -72,11 +129,19 @@ public class Player extends Actor
     }
     
     private void onCollinsion(){}
-    private void mirrorImages() {}
+    private void mirrorImages() 
+    {
+        for(int i = 0; i < WALK_ANIMATION.length; i++)
+        {
+            WALK_ANIMATION[i].mirrorHorizontally(); 
+        }
+    }
     private void gameOver() {}
+    
     private boolean isOnGround()
     {
-        return false;
+        Actor ground = getOneObjectAtOffset(0, getImage(). getHeight() / 2, Platform.class);
+        return ground !=null;
     }
     
     
