@@ -161,11 +161,17 @@ public class Player extends Actor
             Greenfoot.setWorld(world);
         }
         
-        if(isTouching(Obstcle.class))
+        if(isTouching(Obstacle.class))
         {
-            removeTouching(Obstacle.class):
+            removeTouching(Obstacle.class);
         }
-    
+        
+        //hit platform but not on ground
+        if(isTouching(Platform.class) && !isOnGround())
+        {
+            yVelocity = -1;
+            fall();
+        }
     }
 
     private void mirrorImages() 
