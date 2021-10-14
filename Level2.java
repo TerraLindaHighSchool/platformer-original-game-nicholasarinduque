@@ -46,23 +46,27 @@ public class Level2 extends World
                                    MAX_POWERUP, NEXT_LEVEL, Music);
         addObject(player,96,750);
         Gem gem = new Gem();
-        addObject(gem, 890, 488);
+        addObject(gem, 0, 0);
         addObject(new Floor(), 600, 800);
         addObject(new BrickWall(), 0, 00);
-        addObject(new BrickWall(), 960, 100);
-        addObject(new SmBrickWall(),00,00);
-        addObject(new SmBrickWall(), 0,0);
-        addObject(new SmBrickWall(), 0,0);
-        addObject(new SmBrickWall(), 0,0);
-        addObject(new SmBrickWall(), 0,0);
-        addObject(new SmBrickWall(), 0,0);
-        addObject(new SmBrickWall(), 0,0);
+        addObject(new BrickWall(), 1300, 100);
+        addObject(new SmBrickWall(), 925,150);
+        addObject(new SmBrickWall(), 800,200);
+        addObject(new SmBrickWall(), 675,250);
+        addObject(new SmBrickWall(), 550,300);
+        addObject(new SmBrickWall(), 425,350);
+        addObject(new SmBrickWall(), 300,400);
+        addObject(new SmBrickWall(), 175,450);
+        addObject(new SmBrickWall(), 50, 500);
+        addObject(new SmBrickWall(), 25, 550);
+        addObject(new SmBrickWall(), 25, 600);
+        addObject(new SmBrickWall(), 325, 650); 
         addObject(new TrapDoor(GRAVITY), 0, 00); 
         addObject(new TrapDoor(GRAVITY),000, 00);
-        addObject(new Bomb(GRAVITY), 465, 115);
-        addObject(new Bomb(GRAVITY), 1050, 765);
-        addObject(new Gem(), 975, 160);
-        addObject(new Gem(), 1030, 160);
+        addObject(new Bomb(GRAVITY), 0, 0);
+        addObject(new Bomb(GRAVITY), 0, 0);
+        addObject(new Gem(), 0, 0);
+        addObject(new Gem(), 0, 0);
 
       
         
