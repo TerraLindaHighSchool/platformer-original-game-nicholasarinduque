@@ -188,6 +188,17 @@ public class Player extends Actor
             healthCount--;
         }
         
+        if(isTouching(Collectable.class))
+        {
+            removeTouching(Collectable.class);
+            getWorld().removeObject(health[healthCount + 1]);
+            healthCount--;
+        }
+        
+        if(isTouching(HUD.class))
+        {
+            removeTouching(HUD.class);
+        }
         //hit platform but not on ground
         if(isTouching(Platform.class) && !isOnGround())
         {
