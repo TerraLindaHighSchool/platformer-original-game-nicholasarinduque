@@ -54,14 +54,23 @@ public class Level3 extends World
         addObject(new SmBrickWall(), 350, 600);
         addObject(new SmBrickWall(), 150, 500);
         addObject(new SmBrickWall(), 50, 400);
+        addObject(new SmBrickWall(), 250, 300);
+        addObject(new SmBrickWall(), 450, 200);
+        
         addObject(new SmBrickWall(), 650, 700);
         addObject(new SmBrickWall(), 800, 600);
         addObject(new SmBrickWall(), 950, 500);
         addObject(new SmBrickWall(), 1150, 400);
-     
+        addObject(new SmBrickWall(), 950, 300);
+        addObject(new SmBrickWall(), 800, 200);
+        addObject(new SmBrickWall(), 600, 100);
+        
+        addObject(new TrapDoor(GRAVITY), 600,300);
+        addObject(new TrapDoor(GRAVITY), 600,500);
 
         addObject(new Bomb(GRAVITY), 0, 0);
-
+        addObject(new Bomb(GRAVITY), 800, 155);
+        addObject(new Bomb(GRAVITY), 500, 155);
         addObject(new Gem(), 0, 0);
 
       
@@ -72,12 +81,12 @@ public class Level3 extends World
     
     private void spawn()
     {
-        if(Math.random() < 0.0015)
+        if(Math.random() < 0.001)
         {
             addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }
         
-              if(Math.random() < 0.0015)
+              if(Math.random() < 0.001)
         {
             addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }
