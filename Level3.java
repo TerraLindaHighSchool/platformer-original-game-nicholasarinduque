@@ -9,12 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level3 extends World
 {
     private final float GRAVITY = 0.0667f;
-    private final GreenfootSound Music = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound Music = new GreenfootSound("evolution.mp3");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
-    private final Class NEXT_LEVEL = WinSplash.class;
+    private final Class NEXT_LEVEL = Level4.class;
     
     /**
      * Constructor for objects of class BrickWorld.
@@ -46,9 +46,9 @@ public class Level3 extends World
                                    MAX_POWERUP, NEXT_LEVEL, Music);
         addObject(player,96,750);
         Gem gem = new Gem();
-        addObject(gem, 0, 0);
+
         addObject(new Floor(), 600, 800);
-        addObject(new BrickWall(), 0, 0);
+
         
         addObject(new SmBrickWall(), 500, 700);
         addObject(new SmBrickWall(), 350, 600);
@@ -86,7 +86,7 @@ public class Level3 extends World
             addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }
         
-              if(Math.random() < 0.001)
+              if(Math.random() < 0.01)
         {
             addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }

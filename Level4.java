@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level4 extends World
 {
     private final float GRAVITY = 0.0667f;
-    private final GreenfootSound Music = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound Music = new GreenfootSound("soundepic.mp3");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
@@ -46,9 +46,9 @@ public class Level4 extends World
                                    MAX_POWERUP, NEXT_LEVEL, Music);
         addObject(player,96,750);
         Gem gem = new Gem();
-        addObject(gem, 0, 0);
+
         addObject(new Floor(), 600, 800);
-        addObject(new BrickWall(), 0, 0);
+
         
         addObject(new SmBrickWall(), 500, 700);
         addObject(new TrapDoor(GRAVITY), 350, 600);
@@ -73,11 +73,9 @@ public class Level4 extends World
         
         
 
-
-        addObject(new Bomb(GRAVITY), 0, 0);
         addObject(new Bomb(GRAVITY), 800, 155);
         addObject(new Bomb(GRAVITY), 500, 155);
-        addObject(new Gem(), 0, 0);
+
 
       
         

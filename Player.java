@@ -192,7 +192,7 @@ public class Player extends Actor
         {
             removeTouching(Collectable.class);
             getWorld().removeObject(health[healthCount + 1]);
-            healthCount--;
+            healthCount++;
         }
         
         if(isTouching(HUD.class))
@@ -204,6 +204,11 @@ public class Player extends Actor
         {
             yVelocity = -1;
             fall();
+        }
+        
+        if(isTouching(Portal1.class))
+        {
+            move(3);
         }
     }
 
