@@ -190,9 +190,7 @@ public class Player extends Actor
         
         if(isTouching(Collectable.class))
         {
-            removeTouching(Collectable.class);
-            getWorld().removeObject(health[healthCount + 1]);
-            healthCount++;
+
         }
         
         if(isTouching(HUD.class))
@@ -204,11 +202,6 @@ public class Player extends Actor
         {
             yVelocity = -1;
             fall();
-        }
-        
-        if(isTouching(Portal1.class))
-        {
-            move(3);
         }
     }
 
@@ -233,6 +226,5 @@ public class Player extends Actor
         Actor ground = getOneObjectAtOffset(0, getImage(). getHeight() / 2, Platform.class);
         return ground !=null;
     }
-    
-    
+
 }

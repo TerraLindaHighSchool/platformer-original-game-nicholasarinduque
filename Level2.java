@@ -74,7 +74,7 @@ public class Level2 extends World
         
         addObject(new Gem(), 200, 400);
         addObject(new Gem(), 100, 600);
-        addObject(new Gem(), 0, 0);
+        addObject(new Gem(), 1000, 750);
 
       
         
@@ -89,7 +89,7 @@ public class Level2 extends World
             addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }
         
-              if(Math.random() < 0.0015)
+              if(Math.random() < 0.005)
         {
             addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }

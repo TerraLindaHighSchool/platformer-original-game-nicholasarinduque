@@ -85,7 +85,7 @@ public class Level4 extends World
     
     private void spawn()
     {
-        if(Math.random() < 0.001)
+        if(Math.random() < 0.02)
         {
             addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }
